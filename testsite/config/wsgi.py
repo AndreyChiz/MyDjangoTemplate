@@ -1,5 +1,5 @@
 """
-WSGI config for xxxsite project.
+WSGI config for testsite project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
