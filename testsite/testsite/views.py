@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return HttpResponse('страница index')
+    return render(request, 'testsite/index.html')
 
 
 def blog(request, title):
