@@ -6,6 +6,9 @@ from django.shortcuts import render, redirect
 def index(request):
     return render(request, 'testsite/index.html')
 
+def about(request):
+    return render(request, 'testsite/about.html')
+
 
 def blog(request, title):
     if title.startswith('z'):

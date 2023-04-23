@@ -18,10 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from testsite.views import catalog, blog, index
+from testsite.views import catalog, blog, index, about
 
 urlpatterns = [
     path('', index, name='myNewUrl'),
-    path('catalog/<int:catid>/', catalog),
-    re_path(r'^blog/(?P<title>[A-z]{0,10})/', blog)
+    path('about/', about, name='about'), # http://127.0.0.1:8000/about/
+
+    # path('catalog/<int:catid>/', catalog),
+    # re_path(r'^blog/(?P<title>[A-z]{0,10})/', blog)
 ]
