@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseNotFound, Http404
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
@@ -8,6 +8,8 @@ def index(request):
 
 
 def blog(request, title):
+    if title.startswith('z'):
+        return redirect('myNewUrl', permanent=True)  # permanent=True перенесена постоянно
     return HttpResponse(f'тема блога {title}')
 
 

@@ -21,7 +21,7 @@ from django.urls import path, re_path
 from testsite.views import catalog, blog, index
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='myNewUrl'),
     path('catalog/<int:catid>/', catalog),
     re_path(r'^blog/(?P<title>[A-z]{0,10})/', blog)
 ]
