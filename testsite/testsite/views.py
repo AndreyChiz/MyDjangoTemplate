@@ -12,5 +12,6 @@ def blog(request, title):
 
 
 def catalog(request, catid):
+    print(request.GET)
     return HttpResponse(f'<h1>Id в каталоге</h1>'
                         f'<p><h2>{catid}</h2>')
