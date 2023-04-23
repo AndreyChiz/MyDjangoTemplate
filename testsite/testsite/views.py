@@ -4,24 +4,24 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return render(request, 'testsite/index.html')
+    return render(request, 'testsite/index.html', {'title': 'Главная страница'})
 
 def about(request):
-    return render(request, 'testsite/about.html')
+    return render(request, 'testsite/about.html', {'title': 'Главная страница'})
 
-
-def blog(request, title):
-    if title.startswith('z'):
-        return redirect('myNewUrl', permanent=True)  # permanent=True перенесена постоянно
-    return HttpResponse(f'тема блога {title}')
-
-
-def catalog(request, catid):
-    print(request.GET)  # http://127.0.0.1:8000/catalog/12/?name=Gagarina&cat=music
-    if catid > 10:
-        raise Http404()
-    return HttpResponse(f'<h3>Id в каталоге</h3>'
-                        f'<p><h1>{catid}</h1>')
+#
+# def blog(request, title):
+#     if title.startswith('z'):
+#         return redirect('myNewUrl', permanent=True)  # permanent=True перенесена постоянно
+#     return HttpResponse(f'тема блога {title}')
+#
+#
+# def catalog(request, catid):
+#     print(request.GET)  # http://127.0.0.1:8000/catalog/12/?name=Gagarina&cat=music
+#     if catid > 10:
+#         raise Http404()
+#     return HttpResponse(f'<h3>Id в каталоге</h3>'
+#                         f'<p><h1>{catid}</h1>')
 
 
 def pageNotFound(request, exception):
